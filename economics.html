@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="economics.css">
+</head>
+
+<body>
+
+
+
+  <button class="tablink" onclick="openPage('economic', this, 'rgba(247, 199, 137, 0.473)')"
+    id="defaultOpen">經濟成長率</button>
+  <button class="tablink" onclick="openPage('unemployment', this, 'rgba(170, 170, 170, 0.61)')">失業率</button>
+  <button class="tablink" onclick="openPage('priceincrease1', this, 'rgba(177, 252, 177, 0.5)')">物價指數</button>
+  <button class="tablink" onclick="openPage('priceincrease2', this, ' rgba(235, 206, 252, 0.685)')">物價年增率</button>
+
+  <div id="economic" class="tabcontent">
+    <div class="bigtitle">1999~2019年 台灣總體經濟表現</div>
+    <div class="title">經濟成長率</div>
+    <div class="word">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;一國的經濟成長指該國實質總產出或每人平均實質國民所得持續不斷增加的現象。通常所謂經濟成長率 ( economic growth
+      rate ) 是指「實質總產出」或「實質國內生產毛額 (gdp) 」的年增率。<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;國際間多以經濟成長率作為表示一國經濟實力、人民福祉和國際地位的指標。
+      <br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;通常經濟成長變動表現可從三個方面觀察：<br>(1)需求面，反映消費、資本形成及淨出口支出內容的相對改變<br>(2)生產面，反映農業、工業及服務業產出的相對變化<br>(3)分配面，反映勞動與資本等生產要素報酬的相對變化
+    </div>
+    <img src="image/egrowthrate1.jpg" class="egrowthrate1">
+  </div>
+
+  <div id="unemployment" class="tabcontent">
+    <div class="bigtitle">1999~2019年 台灣總體經濟表現</div>
+    <div class="title">失業率</div>
+    <div class="word">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;勞動力係指年滿15歲可以工作之民間人口，包括就業者及失業者。如年滿15歲因就學、料理家務、高齡、身心障礙、想工作而未找工作及其他原因等而未工作亦未找工作者，則不屬於勞動力之民間人口。<br>
+      1. 失業者在勞動力中所占之比率稱為失業率。計算方法如下：<br>
+      失業率（%）= 失業者/勞動力 * 100%
+      = 失業者/（失業者+就業者）*100%
+      <br>
+      2. 廣義失業率較失業率多納入了非勞動力之中的「想工作而未找工作且隨時可以開始工作者」<br>
+      廣義失業率(%)= （失業者 + 想工作而未找工作且隨時可以開始工作者) *100%
+
+    </div>
+    <img src="image/unemploymentrate1.jpg" class="egrowthrate1">
+  </div>
+
+  <div id="priceincrease1" class="tabcontent">
+    <div class="bigtitle">1999~2019年 台灣總體經濟表現</div>
+    <div class="title">物價指數</div>
+    <div class="word">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;物價指數亦稱「商品價格指數」。是一個衡量市場上物價總水準變動情況的指數。物價總水準上升則意味著發生了通貨膨脹，反之，物價總水準下降意味著通貨緊縮，物價指數正是用來衡量經濟中發生的通貨膨脹或是通貨緊縮的一個指標。<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;編制物價指數可分析物價變動對國民經濟與人民生活的影響，從而制定有關物價巨集觀調控政策，加強物價管理提供依據。同時，也為企業做出相應的經濟決策提供依據。
+
+    </div>
+    <img src="image/priceincreaserate1.jpg" class="egrowthrate1">
+  </div>
+
+  <div id="priceincrease2" class="tabcontent">
+    <div class="bigtitle">1999~2019年 台灣總體經濟表現</div>
+    <div class="title">物價年增率</div>
+    <div class="word">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;指臺灣地區消費者物價指數增減數占上期臺灣地區消費者物價指數之百分比。
+      <br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;計算方式為：(當期臺灣地區消費者物價指數增減數÷上期臺灣地區消費者物價指數)×100
+    </div>
+    <img src="image/priceincreaserate2.jpg" class="egrowthrate1">
+  </div>
+
+  <script>
+    function openPage(pageName, elmnt, color) {
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+      tablinks = document.getElementsByClassName("tablink");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].style.backgroundColor = "";
+      }
+      document.getElementById(pageName).style.display = "block";
+      elmnt.style.backgroundColor = color;
+    }
+
+    // Get the element with id="defaultOpen" and click on it
+    document.getElementById("defaultOpen").click();
+  </script>
+</body>
+
+</html>
